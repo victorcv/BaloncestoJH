@@ -1,0 +1,28 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "liga",
+            "otherEntityName": "liga",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "partido",
+            "otherEntityName": "partido",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "arbitro"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151203161636",
+    "dto": "no",
+    "pagination": "pagination"
+}

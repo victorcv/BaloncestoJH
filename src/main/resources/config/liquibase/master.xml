@@ -5,5 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203155638_added_entity_Socio.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203163654_added_entity_Estadio.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203163142_added_entity_Entrenador.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203181805_added_entity_Equipo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151202161553_added_entity_Jugador.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203160432_added_entity_Liga.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203161636_added_entity_Arbitro.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203182556_added_entity_Temporada.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203183430_added_entity_Partido.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151203184744_added_entity_Estadisticas_jugador_partido.xml" relativeToChangelogFile="false"/>
+
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

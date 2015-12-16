@@ -1,0 +1,36 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "equipo",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "partido",
+            "otherEntityName": "partido",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "temporada"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "liga",
+            "otherEntityName": "liga",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151203182556",
+    "dto": "no",
+    "pagination": "pagination"
+}

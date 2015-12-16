@@ -1,0 +1,49 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "estadisticas_jugador_partido",
+            "otherEntityName": "estadisticas_jugador_partido",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "partido"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "arbitro",
+            "otherEntityName": "arbitro",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "temporada",
+            "otherEntityName": "temporada",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "equipo_local",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "equipo_visitante",
+            "otherEntityName": "equipo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151203183430",
+    "dto": "no",
+    "pagination": "pagination"
+}

@@ -1,0 +1,26 @@
+{
+    "ligabaloncestoApp": {
+        "jugador" : {
+            "home": {
+                "title": "Jugadors",
+                "createLabel": "Créer un nouveau Jugador",
+                "createOrEditLabel": "Créer ou éditer un Jugador"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Jugador {{ id }} ?"
+            },
+            "detail": {
+                "title": "Jugador"
+            },
+            "nombre": "Nombre",
+            "fecha": "Fecha",
+            "totalCanastas": "TotalCanastas",
+            "totalAsistencias": "TotalAsistencias",
+            "totalRebotes": "TotalRebotes",
+            "posicion": "Posicion",
+            "estadisticas_jugador_partido": "Estadisticas_jugador_partido",
+            "equipo": "Equipo"
+        }
+    }
+}
+

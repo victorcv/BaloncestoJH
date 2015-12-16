@@ -1,0 +1,24 @@
+{
+    "ligabaloncestoApp": {
+        "partido" : {
+            "home": {
+                "title": "Partidos",
+                "createLabel": "Créer un nouveau Partido",
+                "createOrEditLabel": "Créer ou éditer un Partido"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Partido {{ id }} ?"
+            },
+            "detail": {
+                "title": "Partido"
+            },
+            "fecha": "Fecha",
+            "estadisticas_jugador_partido": "Estadisticas_jugador_partido",
+            "arbitro": "Arbitro",
+            "temporada": "Temporada",
+            "equipo_local": "Equipo_local",
+            "equipo_visitante": "Equipo_visitante"
+        }
+    }
+}
+
