@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugador={nombre:'John',pos:'alero',edad:'18',fechan:'20/08/1990'}">
+<p>El nombre es {{ jugador.nombre }} juega como {{ jugador.pos }} y tiene {{ jugador.edad }} , ha nacido en {{ jugador.fechan }}</p>
+
+<!-- El DOM  no se puede manipular en los controlers, servicios o vistas pero en las directivas si se debe manipular el DOM, conocemos al DOM como Modelo de Objetos del Documento y éste es una interfaz de programación de aplicaciones (API) para documentos validos HTML y bien construidos XML.Define la estructura lógica de los documentos y el modo en que se accede y manipula.Mediante las directivas podemos crear cosas más complejas que incluyen funciones o variables dinámicas definidas directamente en el DOM.
+
+Ejemplo de directiva que trabaja a través de un de un atributo de cualquier elemento del DOM
+<div dir></div>
+
+Ejemplo de directiva que trabaja a través de una clase en el DOM
+<div class="dir"></div>
+
+http://ng-learn.org/2014/01/Dom-Manipulations/
+https://uno-de-piera.com/directivas-en-angularjs/-->
+</div>
+</body>
+</html>

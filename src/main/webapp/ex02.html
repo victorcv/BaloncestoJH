@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Define un jugador:</p>
+<p>Nombre: <input type="text" ng-model="nombre"></p>
+<p>Posicion: <input type="text" ng-model="pos"></p>
+<p>Edad: <input type="text" ng-model="edad"></p>
+<p>Fecha Nacimiento: <input type="text" ng-model="fechan"></p>
+<!--  Se actualizan los datos en el controlador -->
+<p>NOMBRE:{{nombre}}</p>
+<p>POSICION:{{pos}}</p>
+<p>EDAD:{{edad}}</p>
+<p>FECHA NACIMIENTO:{{fechan}}</p>
+
+</div>
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nombre="John";
+    $scope.pos="alero";	
+    $scope.edad="18";
+    $scope.fechan="20/08/1990";
+});
+</script>
+
+
+
+</body>
+</html>

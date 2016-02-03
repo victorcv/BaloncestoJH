@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugadores=[
+{nombre:'Juanmi',posicion:'alero',edad:'19',fecha_nacimiento:'20/08/1990'},
+{nombre:'Carlo',posicion:'base',edad:'19',fecha_nacimiento:'25/08/1990'},
+{nombre:'Gemm',posicion:'pivot',edad:'19',fecha_nacimiento:'10/08/1990'}]">
+
+<p>Looping with objects(jugadores):</p>
+<ul>
+  <li ng-repeat="x in jugadores">
+{{ x.nombre + ', ' + x.posicion + ', ' + x.edad +','+x.fecha_nacimiento }}</li>
+</ul>
+<!-- La directiva ngRepeat instancia un template una vez por cada item de una colección. Cada instancia del template obtiene su propio ámbito , donde la variable del bucle se establece en el elemento de la colección actual. Parece un for-each en este caso.
+-->
+</div>
+
+</body>
+</html>

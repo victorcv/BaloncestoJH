@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<input ng-model="nombre">
+<input ng-model="posicion">
+<input ng-model="edad">
+<input ng-model="fecha_nacimiento">
+
+<h1>Me llamo {{nombre}}, juego de {{posicion}} y creo que tengo {{edad}}.Nací el {{fecha_nacimiento}}.</h1>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nombre = "Michael Jordan";
+    $scope.posicion = "Alero";
+    $scope.edad = "32";
+    $scope.fecha_nacimiento = "25/05/1990";
+});
+</script>
+
+<p>When you change the name in the input field, the changes will affect the model, and it will also affect the name property in the controller.</p>
+
+</body>
+</html>
+

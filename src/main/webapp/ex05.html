@@ -1,0 +1,42 @@
+<!-- Justifica en qué casos es preferible realizar la ordenación en el cliente mediante
+
+AngularJS, y en qué casos es preferible realizar la ordenación en el servidor mediante Spring. 
+
+Explica ventajas e inconvenientes de cada enfoque.-->
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="jugadoresCtrl">
+
+<p>Looping jugadores order by nombre:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'nombre'">
+    {{ x.nombre + ', ' + x.posicion+ ', ' +x.edad + ', ' + x.fecha_nacimiento}}
+  </li>
+</ul>
+
+<p>Looping jugadores order by edad:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'edad'">
+    {{ x.nombre + ', ' + x.posicion+ ', ' +x.edad + ', ' + x.fecha_nacimiento}}
+  </li>
+</ul>
+
+</div>
+
+
+<script>
+angular.module('myApp', []).controller('jugadoresCtrl',
+function($scope){
+$scope.jugadores=[
+{nombre:'Juanmi',posicion:'alero',edad:'20',fecha_nacimiento:'20/08/1990'},
+{nombre:'Carlo',posicion:'base',edad:'18',fecha_nacimiento:'25/08/1990'},
+{nombre:'Gemm',posicion:'pivot',edad:'21',fecha_nacimiento:'10/08/1990'}];
+});
+</script>
+<!-- Creo que para consumir una base de datos externa es mejor utilizar la ordenación en el servidor mediante Spring y no mediante.
+ -->
+</body>
+</html>

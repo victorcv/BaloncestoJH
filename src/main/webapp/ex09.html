@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <table>
+        <tr ng-repeat="x in myData">
+            <td>{{x.nombre}}</td>
+            <td>{{x.fecha}}</td>
+            <td>{{x.totalCanastas}}</td>
+            <td>{{x.totalAsistencias}}</td>
+            <td>{{x.totalRebotes}}</td>
+            <td>{{x.posicion}}</td>
+            <td>{{x.equipo.nombre}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors").then(function (response) {
+            $scope.myData = response.data;
+        });
+    });
+</script>
+
+
+</body>
+</html>
