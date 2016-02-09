@@ -11,7 +11,7 @@
         padding: 5px;
     }
 </style>
-<div ng-app="basketballApp" ng-controller="creacionCtrl">
+<div ng-app="ligabaloncestoApp" ng-controller="creacionCtrl"><!-- ligabaloncestoApp se mira en la carpeta webapp/scripts/app/entities -->
     <div>
         <form name="formJugador" ng-submit="save()">
             Nombre: <input type="text" name="nombre" ng-model="jugador.nombre" required/>
@@ -20,8 +20,8 @@
             Posicion: <input type="text" name="posicion" ng-model="jugador.posicion" required/>
             <span ng-show="formJugador.posicion.$touched && formJugador.posicion.$invalid">Posicion requerida</span><br/>
 
-            Canastas Totales: <input type="number" name="totalCanastras" ng-model="jugador.totalCanastras" required/>
-            <span ng-show="formJugador.totalCanastras.$touched && formJugador.totalCanastras.$invalid">Canastas requeridas</span><br/>
+            Canastas Totales: <input type="number" name="totalCanastas" ng-model="jugador.totalCanastas" required/>
+            <span ng-show="formJugador.totalCanastas.$touched && formJugador.totalCanastas.$invalid">Canastas requeridas</span><br/>
 
             Asistencias Totales: <input type="number" name="totalAsistencias" ng-model="jugador.totalAsistencias" required/>
             <span ng-show="formJugador.totalAsistencias.$touched && formJugador.totalAsistencias.$invalid">Asistencias requeridas</span><br/>
@@ -32,8 +32,8 @@
             Fecha: <input type="date" name="fecha" ng-model="jugador.fecha" required/>
             <span ng-show="formJugador.fecha.$touched && formJugador.fecha.$invalid">Fecha requerida</span><br/>
 
-            Equipo: <input type="text" name="equipo.nombre" ng-model="jugador.equipo.nombre" required/>
-            <span ng-show="formJugador.equipo.nombre.$touched && formJugador.equipo.nombre.$invalid">Equipo requerido</span><br/>
+            <!-- Equipo: <input type="text" name="equipo.nombre" ng-model="jugador.equipo.nombre" required/>
+            <span ng-show="formJugador.equipo.nombre.$touched && formJugador.equipo.nombre.$invalid">Fecha requerida</span><br/>-->
 
             <button type="submit" ng-disabled="formJugador.$invalid || isSaving">
                 <span>Save</span>
@@ -44,6 +44,9 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
+
+<!--Los scripts se sacan dandole a ver codigo fuente en la pagina http://127.0.1.1:8080/#/jugadors-->
+
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -158,7 +161,7 @@
 <script src="scripts/components/entities/jugador/jugador.service.js"></script>
 
 <script>
-    var app = angular.module('basketballApp');
+    var app = angular.module('ligabaloncestoApp');
     app.controller('creacionCtrl', function($scope, Jugador) {
         $scope.jugador;
         $scope.save = function () {

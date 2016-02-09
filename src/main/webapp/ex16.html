@@ -11,14 +11,17 @@
         padding: 5px;
     }
 </style>
-<div ng-app="basketballApp" ng-controller="creacionCtrl">
+<div ng-app="ligabaloncestoApp" ng-controller="creacionCtrl"><!-- ligabaloncestoApp se mira en la carpeta webapp/scripts/app/entities -->
     <div>
         <form name="formEquipo" ng-submit="save()">
             Nombre: <input type="text" name="nombre" ng-model="equipo.nombre" required/>
             <span ng-show="formEquipo.nombre.$touched && formEquipo.nombre.$invalid">Nombre  requerido</span><br/>
 
-            Local: <input type="text" name="local" ng-model="equipo.local" required/>
-            <span ng-show="formEquipo.local.$touched && formEquipo.local.$invalid">Local  requerido</span><br/>
+            Localidad: <input type="text" name="localidad" ng-model="equipo.localidad" required/>
+            <span ng-show="formEquipo.localidad.$touched && formEquipo.localidad.$invalid">Local  requerido</span><br/>
+
+            FechaCreacion: <input type="date" name="fechaCreacion" ng-model="equipo.fechaCreacion" required/>
+            <span ng-show="formEquipo.fechaCreacion.$touched && formEquipo.fechaCreacion.$invalid">Local  requerido</span><br/>
 
             <button type="submit" ng-disabled="formEquipo.$invalid || isSaving">
                 <span>Save</span>
@@ -29,6 +32,8 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
+
+
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -143,7 +148,7 @@
 <script src="scripts/components/entities/equipo/equipo.service.js"></script>
 
 <script>
-    var app = angular.module('basketballApp');
+    var app = angular.module('ligabaloncestoApp');
     app.controller('creacionCtrl', function($scope, Equipo) {
         $scope.equipo;
         $scope.save = function () {
