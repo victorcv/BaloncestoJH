@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <p>Buscar en todos los campos:<input type="text" ng-model="campoBusca"></p>
+
+    <table>
+        <tr ng-repeat="x in myData | filter:campoBusca">
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.nombre}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.fecha}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalCanastas}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalAsistencias}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalRebotes}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.posicion}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.equipo.nombre}}</td>
+
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.nombre}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.fecha}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalCanastas}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalAsistencias}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalRebotes}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.posicion}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.equipo.nombre}}</td>
+        </tr>
+    </table>
+    <hr>
+    <p>Buscar en todos los campos:<input ng-model="search.$"></p><!-- $ porque creo que necesita poner algo  -->
+    <p>Nombre:<input ng-model="search.nombre"></p>
+    <p>Posicion:<input ng-model="search.posicion"></p><!-- search.x en la que x se tiene que llamar igual que el campo sino no funciona  -->
+    <p>Fecha:<input ng-model="search.fecha"></p>
+    <p>TotalCanastas:<input ng-model="search.totalCanastas"></p>
+    <p>TotalAsistencias:<input ng-model="search.totalAsistencias"></p>
+    <p>TotalRebotes:<input ng-model="search.totalRebotes"></p>
+    <p>Equipo:<input ng-model="search.equipo.nombre"></p>
+    <p>Igualdad:<input type="checkbox" ng-model="strict"></p><!-- Solo muestra el primero despues de marcar el checkbox  -->
+
+    <table>
+        <tr ng-repeat="x in myData | filter:search:strict"><!-- el segundo parámetro del filter tiene que ser true  -->
+
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.nombre}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.fecha}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalCanastas}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalAsistencias}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.totalRebotes}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.posicion}}</td>
+            <td ng-if="$odd" style="background-color:#ffa798">{{x.equipo.nombre}}</td>
+
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.nombre}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.fecha}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalCanastas}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalAsistencias}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.totalRebotes}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.posicion}}</td>
+            <td ng-if="$even" style="background-color:#f1c34a">{{x.equipo.nombre}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors").then(function (response) {
+            $scope.myData = response.data;
+        });
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <p>Haz click a los headers:</p>
+    <table border="1" width="70%">
+        <tr>
+            <th ng-click="orderByMe('nombre')">Nombre</th>
+            <th ng-click="orderByMe('fecha')">Fecha</th>
+            <th ng-click="orderByMe('totalCanastas')">TotalCanastas</th>
+            <th ng-click="orderByMe('totalAsistencias')">TotalAsistencias</th>
+            <th ng-click="orderByMe('totalRebotes')">TotalRebotes</th>
+            <th ng-click="orderByMe('posicion')">Posicion</th>
+            <th ng-click="orderByMe('equipo.nombre')">Equipo</th>
+        </tr>
+        <tr ng-repeat="x in myData | orderBy:miOrden">
+
+            <td>{{x.nombre}}</td>
+            <td>{{x.fecha}}</td>
+            <td>{{x.totalCanastas}}</td>
+            <td>{{x.totalAsistencias}}</td>
+            <td>{{x.totalRebotes}}</td>
+            <td>{{x.posicion}}</td>
+            <td>{{x.equipo.nombre}}</td>
+
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("http://127.0.1.1:8080/api/jugadors").then(function (response) {
+            $scope.myData = response.data;
+            $scope.orderByMe = function(x) {
+                $scope.miOrden = x;
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
